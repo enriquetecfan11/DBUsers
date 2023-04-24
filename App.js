@@ -3,7 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-import HomeScreen from './screens/HomeScreen'; // Importa la pantalla de inicio
+// import HomeScreen from './screens/HomeScreen';
+import NavigationScreen from './screens/NavigationScreen';
 
 // Firebase
 // Import the functions you need from the SDKs you need
@@ -22,7 +23,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 const Stack = createStackNavigator();
 
@@ -30,12 +31,13 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Login" options={{ headerShown: false }} component={LoginScreen} />
+        <Stack.Screen name="Register" options={{ headerShown: false }} component={RegisterScreen} />
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="NavigationScreen"
+          component={NavigationScreen}
           options={{ title: 'Pantalla de inicio' }}
+          options={{ headerShown: false }}
         />
 
       </Stack.Navigator>

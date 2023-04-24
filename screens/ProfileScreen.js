@@ -7,10 +7,10 @@ import { getAuth } from "firebase/auth";
 
 const Tab = createBottomTabNavigator();
 
-const HomeScreen = () => {
+const ProfileScreen = () => {
   return (
     <View style={styles.container}>
-    <Text style={styles.title}>Bienvenida</Text>
+    <Text style={styles.title}>Pantalla de Perfil</Text>
     <Text>Hola {getAuth().currentUser.email}</Text>
   </View>
   );
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default ProfileScreen;

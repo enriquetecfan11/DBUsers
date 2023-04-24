@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
+import { Alert } from 'react-native';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
@@ -8,16 +9,16 @@ const RegisterScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const auth = getAuth();
+  const navigation = useNavigation();
 
 
   const handleSignup = () => {
     createUserWithEmailAndPassword(auth, username, password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
         const password = userCredential.password;
+        navigation.navigate('NavigationScreen')
         Alert.alert('Success', 'User registered successfully')
-        navigation.navigate('Home')
       })
       .catch((error) => {
         const errorCode = error.code;

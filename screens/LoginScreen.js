@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Alert } from 'react-native';
-
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
@@ -21,7 +20,7 @@ const LoginScreen = () => {
         // Signed in
         const user = userCredential.user;
         const password = userCredential.password;
-        navigation.navigate('Home')
+        navigation.navigate('NavigationScreen')
       })
       .catch((error) => {
         const errorCode = error.code;
