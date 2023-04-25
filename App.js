@@ -14,12 +14,14 @@ import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyD00zLv5U93MzDnYjEwLdFXYFUIhUzkxj8",
   authDomain: "yourwebcsv.firebaseapp.com",
+  databaseURL: "https://yourwebcsv-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "yourwebcsv",
   storageBucket: "yourwebcsv.appspot.com",
   messagingSenderId: "153557946783",
   appId: "1:153557946783:web:f9ed99b7e724d2d13aadaa",
   measurementId: "G-Y1B5YX3FMM"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
